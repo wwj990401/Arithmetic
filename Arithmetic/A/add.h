@@ -1,0 +1,1 @@
+extern "C" int add(int added, int add);
