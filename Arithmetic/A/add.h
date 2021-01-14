@@ -1,1 +1,1 @@
-extern "C" int add(int added, int add);
+extern "C" long long add(int added, int add);
