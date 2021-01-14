@@ -13,8 +13,7 @@ namespace UnitTestA
 		
 		TEST_METHOD(Testadd)
 		{
-			long long expect, output;
-			int added, add1, i;
+			int expect, output, added, add1, i;
 			WCHAR* padd[6] = { L"add1",L"add2",L"add3",L"add4",L"add5",L"add6",};
 			for (i = 0; i < 6; i++)
 			{
