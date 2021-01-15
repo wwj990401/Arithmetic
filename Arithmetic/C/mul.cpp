@@ -11,5 +11,6 @@ int mul(int multiplied, int multiplier)
 	{
 		return (int)mul;
 	}
+	printf("输出数据溢出，返回0\n");
 	return 0;
 }
