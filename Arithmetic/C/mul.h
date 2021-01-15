@@ -1,1 +1,1 @@
-extern "C" int mul(int multiplied, int multiplier);
+extern "C" int mul(int multiplied, int multiplier, int* result);
