@@ -12,5 +12,6 @@ int sub(int subtracted, int subtract)
 	{
 		return (int)sub;
 	}
+	printf("输出数据溢出，返回0\n");
 	return 0;
 }
