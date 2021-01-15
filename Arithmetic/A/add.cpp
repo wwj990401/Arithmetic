@@ -11,5 +11,6 @@ int add(int added, int add)
 	{
 		return (int)sum;
 	}
+	printf("输出数据溢出，返回0\n");
 	return 0;
 }
