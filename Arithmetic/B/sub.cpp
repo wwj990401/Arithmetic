@@ -1,17 +1,54 @@
 #include<stdio.h>
 #include"sub.h"
-#include"assert.h"
 
-int sub(int subtracted, int subtract)
+int sub(int subtracted, int subtract, int* result)
 {
-	long long a, b, sub;
-	a = (long long)subtracted;
-	b = (long long)subtract;
-	sub = a - b;
-	if (sub <= 2147483647 && sub >= -(long long)2147483648)
+	int diff = subtracted - subtract;
+	if (subtract != (-2147483647 - 1))
 	{
-		return (int)sub;
+		if (subtracted > 0 && subtract < 0)
+		{
+			if (diff < 0)
+			{
+				*result = 0;
+				return 1;
+			}
+			else
+			{
+				*result = diff;
+				return 0;
+			}
+		}
+		else if (subtracted < 0 && subtract > 0)
+		{
+			if (diff > 0)
+			{
+				*result = 0;
+				return 1;
+			}
+			else
+			{
+				*result = diff;
+				return 0;
+			}
+		}
+		else
+		{
+			*result = diff;
+			return 0;
+		}
 	}
-	printf("输出数据溢出，返回0\n");
-	return 0;
+	else
+	{
+		if (subtracted > 0)
+		{
+			*result = 0;
+			return 1;
+		}
+		else
+		{
+			*result = diff;
+			return 0;
+		}
+	}
 }
