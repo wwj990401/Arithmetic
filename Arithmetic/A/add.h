@@ -1,1 +1,1 @@
-extern "C" int add(int added, int add);
+extern "C" int add(int added, int add,int*result);
