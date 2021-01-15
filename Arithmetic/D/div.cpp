@@ -6,12 +6,14 @@ div_t div1(int numer, int denom)
 	div_t output;
 	if (denom == 0)
 	{
+		printf("除数不能为零，返回0\n");
 		output.quot = 0;
 		output.rem = 0;
 		return output;
 	}
-	if (numer == -2147483648 && denom == -1)
+	if (numer == -(int)2147483648 && denom == -1)
 	{
+		printf("输出数据溢出，返回0\n");
 		output.quot = 0;
 		output.rem = 0;
 		return output;
@@ -25,7 +27,7 @@ div_t div1(int numer, int denom)
 			return output;
 		}
 	}
-	if (numer == -2147483648 && denom < -1)
+	if (numer == -(int)2147483648 && denom < -1)
 	{
 		long long Lnumer, Ldenom, quot, rem;
 		Lnumer = -(long long)numer;
