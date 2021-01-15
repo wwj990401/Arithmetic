@@ -1,0 +1,1 @@
+extern "C" int sub(int subtracted, int subtract);
