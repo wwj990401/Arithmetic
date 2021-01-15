@@ -1,0 +1,1 @@
+extern "C" int mul(int multiplied, int multiplier);
