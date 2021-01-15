@@ -1,1 +1,1 @@
-extern "C" int sub(int subtracted, int subtract);
+extern "C" int sub(int subtracted, int subtract, int* result);
