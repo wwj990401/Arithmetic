@@ -17,8 +17,8 @@ namespace UnitTestC
 			int expect_mul, expect_return, output_mul, output_return;
 			poutput = &output_mul;
 			int multiplied, multiplier, i;
-			WCHAR* pmul[9] = { L"mul1", L"mul2", L"mul3", L"mul4", L"mul5", L"mul6", L"mul7", L"mul8", L"mul9"};
-			for (i = 0; i < 9; i++)
+			WCHAR* pmul[12] = { L"mul1", L"mul2", L"mul3", L"mul4", L"mul5", L"mul6", L"mul7", L"mul8", L"mul9", L"mul10", L"mul11", L"mul12" };
+			for (i = 0; i < 12; i++)
 			{
 				expect_return = GetPrivateProfileInt(pmul[i], L"expect_return", NULL, L"../²âÊÔÓÃÀý.ini");
 				expect_mul = GetPrivateProfileInt(pmul[i], L"expect_mul", NULL, L"../²âÊÔÓÃÀý.ini");
@@ -27,6 +27,7 @@ namespace UnitTestC
 				output_return = mul(multiplied, multiplier, poutput);
 				Assert::IsTrue(expect_return == output_return);
 				Assert::IsTrue(expect_mul == output_mul);
+				output_mul = -858993460;
 			}
 		}
 

@@ -4,7 +4,12 @@
 
 int mul(int multiplied, int multiplier, int* result)
 {
-	if (multiplied >= 0 && multiplier >= 0)
+	if (multiplied == 0 || multiplier == 0)
+	{
+		*result = 0;
+		return 0;
+	}
+	if (multiplied > 0 && multiplier > 0)
 	{
 		if (2147483647 / multiplied < multiplier)
 		{
@@ -13,13 +18,13 @@ int mul(int multiplied, int multiplier, int* result)
 		}
 		else
 		{
-			if (*result == -858993460)
+			if (*result != -858993460)
 			{
-				*result = multiplied * multiplier;
 				return 0;
 			}
 			else
 			{
+				*result = multiplied * multiplier;
 				return 0;
 			}
 		}
@@ -33,15 +38,9 @@ int mul(int multiplied, int multiplier, int* result)
 		}
 		else
 		{
-			if (*result == -858993460)
-			{
-				*result = multiplied * multiplier;
-				return 0;
-			}
-			else
-			{
-				return 0;
-			}
+			*result = multiplied * multiplier;
+			return 0;
+
 		}
 	}
 	else if (multiplied * multiplier == (-2147483647 - 1))
@@ -56,16 +55,8 @@ int mul(int multiplied, int multiplier, int* result)
 	}
 	else if (multiplied == (-2147483647 - 1) || multiplier == (-2147483647 - 1))
 	{
-		if (multiplied == 0 || multiplier == 0)
-		{
-			*result = 0;
-			return 0;
-		}
-		else
-		{
-			*result = 0;
-			return 1;
-		}
+		*result = 0;
+		return 1;
 	}
 	else
 	{
